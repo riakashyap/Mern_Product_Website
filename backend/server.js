@@ -13,6 +13,10 @@ app.use(express.json()); // allows us to accept JSON data in req.body
 
 app.use("/api/products",productRoutes)
 
+app.get('/', (req, res) => {
+  res.send('API is running');
+});
+
 app.listen(PORT, () => {
   connectDB();
   console.log('Server is running on port 5000');
